@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+	<package name="default" extends="struts-default">
+	<global-results>
+<result name="errorpage">/errorPage.jsp</result>
+</global-results>
+
+<global-exception-mappings>
+<exception-mapping result="errorpage" exception="java.lang.Exception"></exception-mapping>
+</global-exception-mappings>
+		<action name="LoginAction" class="com.csu.uas.action.LoginAction"
+			method="validateLogin">
+			<result name="mac">/machome.jsp</result>
+			<result name="admin">/adminhome.jsp</result>
+			<result name="input">/login.jsp</result>
+		</action>
+
+		<action name="ViewProgramsOffered" class="com.csu.uas.action.ProgramAction"
+			method="viewProgramsOffered">
+			<result name="success">/viewProgramsOffered.jsp</result>
+			<result name="error">/errorPage.jsp</result>
+		</action>
+		<action name="AddProgramOffered" class="com.csu.uas.action.ProgramAction"
+			method="addProgramOffered">
+			<result name="success">/addProgram.jsp</result>
+			<result name="input">/addProgram.jsp</result>
+		</action>
+		<action name="deleteProgram" class="com.csu.uas.action.ProgramAction"
+			method="deleteProgramOffered">
+			<result name="success" type="redirectAction">
+				<param name="actionName">ViewProgramsOffered</param>
+			</result>
+			<result name="input">/viewProgramsOffered.jsp</result>
+		</action>
+		<action name="updateProgramView" class="com.csu.uas.action.ProgramAction"
+			method="updateProgramOfferedView">
+			<result name="success">/updateProgramOffered.jsp</result>
+		</action>
+		<action name="UpdateProgramOffered" class="com.csu.uas.action.ProgramAction"
+			method="updateProgramOfferedUpdate">
+			<result name="success">/updateProgramOffered.jsp</result>
+			<result name="input">/updateProgramOffered.jsp</result>
+		</action>
+		<action name="ScheduleAprogram" class="com.csu.uas.action.ProgramAction"
+			method="getProgramID">
+			<result name="success">/scheduleProgram.jsp</result>
+		</action>
+		<action name="ScheduleProgramMethod" class="com.csu.uas.action.ProgramAction"
+			method="scheduleProgram">
+			<result name="success">/scheduleProgram.jsp</result>
+			<result name="input">/scheduleProgram.jsp</result>
+		</action>
+		<action name="ViewScheduledProgram" class="com.csu.uas.action.ProgramAction"
+			method="viewScheduledProgramAction">
+			<result name="success">/viewScheduledProgram.jsp</result>
+		</action>
+		<action name="updateScduledProgramView" class="com.csu.uas.action.ProgramAction"
+			method="updateProgramScheduledView">
+			<result name="success">/updateScheduledProgram.jsp</result>
+		</action>
+		<action name="updScheduledProgram" class="com.csu.uas.action.ProgramAction"
+			method="updateProgramSchduledUpdate">
+			<result name="success">/updateScheduledProgram.jsp</result>
+			<result name="input">/updateScheduledProgram.jsp</result>
+		</action>
+		<action name="deleteScdProgram" class="com.csu.uas.action.ProgramAction"
+			method="deleteProgramScheduled">
+			<result name="success" type="redirectAction">
+				<param name="actionName">ViewScheduledProgram</param>
+			</result>
+		</action>
+		<action name="viewAcceptedApp" class="com.csu.uas.action.ApplicantAction"
+			method="viewAcceptedRedirect">
+			<result name="success">/viewAcceptedApplicants.jsp</result>
+		</action>
+		<action name="viewApplicantStatus" class="com.csu.uas.action.ApplicantAction"
+			method="viewApplicantStatusAction">
+			<result name="success">/viewAcceptedApplicants.jsp</result>
+		</action>
+		<action name="viewProgramsScheduledApplicant" class="com.csu.uas.action.ProgramAction"
+			method="viewProgramInfoAction">
+			<result name="success">/viewProgramsApplicant.jsp</result>
+		</action>
+		<action name="applyOnline" class="com.csu.uas.action.ApplicantAction"
+			method="redirectApplicationForm">
+			<result name="success">/application.jsp</result>
+		</action>
+
+		<action name="SubmitApplication" class="com.csu.uas.action.ApplicantAction"
+			method="submitApplicationAction">
+			<result name="success">/application.jsp</result>
+			<result name="input">/application.jsp</result>
+		</action>
+
+		<action name="viewAppliationStatus" class="com.csu.uas.action.ApplicantAction"
+			method="viewApplicationStatusAction">
+			<result name="success">/viewapplicationstatus.jsp</result>
+			<result name="input">/viewapplicationstatus.jsp</result>
+		</action>
+		<action name="redirect">
+			<result>/viewapplicationstatus.jsp</result>
+		</action>
+		<action name="logout" class="com.csu.uas.action.LoginAction" method="logout">
+			<result name="success">/login.jsp</result>
+		</action>
+	</package>
+
+	<package name="mac" extends="struts-default" namespace="/">
+	<global-results>
+<result name="errorpage">/errorPage.jsp</result>
+</global-results>
+
+
+<global-exception-mappings>
+<exception-mapping result="errorpage" exception="java.lang.Exception"></exception-mapping>
+</global-exception-mappings>
+		<action name="MacAction" class="com.csu.uas.action.MacAction">
+			<result name="error">/machome.jsp</result>
+			<result name="AppliedListPage">/AppliedListPage.jsp</result>
+			<result name="AcceptedListPage">/AcceptedListPage.jsp</result>
+			<result name="ConfirmedListPage">/ConfirmedListPage.jsp</result>
+			<result name="RejectedListPage">/RejectedListPage.jsp</result>
+		</action>
+
+
+		<action name="acceptApplied" class="com.csu.uas.action.MacAction"
+			method="AppliedToAccept">
+			<result name="success">/AppliedListPage.jsp</result>
+			<result name="input">/AppliedListPage.jsp</result>
+		</action>
+
+
+
+		<action name="rejectApplied" class="com.csu.uas.action.MacAction"
+			method="AppliedToReject">
+			<result name="success">/AppliedListPage.jsp</result>
+		</action>
+
+
+		<action name="ConfirmAccepted" class="com.csu.uas.action.MacAction"
+			method="AcceptedToConform">
+			<result name="success">/AcceptedListPage.jsp</result>
+			<result name="input">/AcceptedListPage.jsp</result>
+		</action>
+
+		<action name="RejectAccepted" class="com.csu.uas.action.MacAction"
+			method="AcceptedToReject">
+			<result name="success">/AcceptedListPage.jsp</result>
+			<result name="input">/AcceptedListPage.jsp</result>
+		</action>
+
+	</package>
+</struts>

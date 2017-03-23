@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.2//EN" "http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd" >
+<validators>
+  
+            <field name="programName">
+                   <field-validator type="requiredstring">
+                        <message key="err.programName"></message>
+                  </field-validator>
+            </field>
+            
+            <field name="programDescrption">
+                   <field-validator type="requiredstring">
+                        <message key="err.programDescription"></message>
+                  </field-validator>
+            </field>
+            
+            <field name="applicantEligibily">
+                   <field-validator type="requiredstring">
+                        <message key="err.applicantEligibily"></message>
+                  </field-validator>
+            </field>
+            
+           <!--  <field name="programDuration">
+                   <field-validator type="requiredstring">
+                        <message key="err.programDuration"></message>
+                  </field-validator>
+            </field> -->
+            
+            <field name="degreeCertificateOffered">
+                   <field-validator type="requiredstring">
+                        <message key="err.degreeCertificateOffered"></message>
+                  </field-validator>
+            </field>
+</validators>

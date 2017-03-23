@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.2//EN" "http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd" >
+<validators>
+            <field name="applicantName">
+                   <field-validator type="requiredstring">
+                        <message key="err.applicantName"></message>
+                  </field-validator>
+            </field>
+            <!-- <field name="applicantDob">
+                   <field-validator type="requiredstring">
+                        <message key="err.applicantDob"></message>
+                  </field-validator>
+            </field> -->
+            <field name="highestQualification">
+                   <field-validator type="requiredstring">
+                        <message key="err.highestQualification"></message>
+                  </field-validator>
+            </field>
+            <field name="goals">
+                   <field-validator type="requiredstring">
+                        <message key="err.goals"></message>
+                  </field-validator>
+            </field>
+              <field name="emailID">
+                   <field-validator type="requiredstring">
+                        <message key="err.emailID"></message>
+                  </field-validator>
+            </field>
+</validators>

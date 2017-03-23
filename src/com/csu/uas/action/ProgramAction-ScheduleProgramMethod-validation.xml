@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.2//EN" "http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd" >
+<validators>
+  
+       <field name="programLocaiton">
+                   <field-validator type="requiredstring">
+                        <message key="err.programLocation"></message>
+                  </field-validator>
+            </field>
+            
+            <field name="programStartDate">
+                   <field-validator type="requiredstring">
+                        <message key="err.programStartDate"></message>
+                  </field-validator>
+            </field>
+            
+            <field name="programEndDate">
+                   <field-validator type="requiredstring">
+                        <message key="err.programEndDate"></message>
+                  </field-validator>
+            </field>
+            
+           <field name="sessionsPerWeek">
+                   <field-validator type="requiredstring">
+                        <message key="err.sessionsPerWeek"></message>
+                  </field-validator>
+            </field>
+            </validators>
